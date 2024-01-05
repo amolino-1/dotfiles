@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=IboView
+Exec=flatpak run --command=bottles-cli com.usebottles.bottles run -p 'IboView' -b 'IboView'
+Type=Application
+Terminal=false
+Categories=Application;
+Icon=/home/andrew/.local/share/applications/icons/iboview.png
+Actions=Configure;
+[Desktop Action Configure]
+Name=Configure in Bottles
+Exec=flatpak run --command=bottles-cli com.usebottles.bottles -b 'IboView'
+

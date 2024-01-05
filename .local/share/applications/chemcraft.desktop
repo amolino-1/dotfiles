@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Chemcraft
+Exec=flatpak run --command=bottles-cli com.usebottles.bottles run -p 'Chemcraft' -b 'Chemcraft'
+Type=Application
+Terminal=false
+Categories=Application;
+Icon=/home/andrew/.local/share/applications/icons/chemcraft.png
+Comment=Chemistry 3D visualization and modeling
+Actions=Configure;
+[Desktop Action Configure]
+Name=Configure in Bottles
+Exec=flatpak run --command=bottles-cli com.usebottles.bottles -b 'Chemcraft'
+

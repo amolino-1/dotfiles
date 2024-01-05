@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=GaussView
+Exec=sh -c "g16root=/home/andrew/Software/Gaussian GAUSS_EXEDIR=$g16root/g16 GAUSS_SCRDIR=$g16root/scr /home/andrew/Software/gview/gv/gv"
+Icon=/home/andrew/.local/share/applications/icons/GaussView.png
+Terminal=false
