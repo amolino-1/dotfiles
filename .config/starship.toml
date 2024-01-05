@@ -1,0 +1,67 @@
+# ~/.config/starship.toml
+
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+# Make prompt a single line instead of two lines
+[line_break]
+disabled = true
+
+# Replace the "❯" symbol in the prompt with "➜"
+# [character]                         # The name of the module we are configuring is "character"
+# success_symbol = "[➜](bold green)"  # The "success_symbol" is set to "➜" with color "bold green"
+
+# Use custom format
+# format = """
+# [┌───────────────────>](bold green)
+# [│](bold green)$directory$rust$package
+# [└─>](bold green) """
+
+# Timeout for command execution, in milliseconds
+command_timeout = 3600000
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+# Prints a bold red arrow if a command you've entered failes
+[character]
+error_symbol = "[✖](bold red) "
+
+# Prints how long the command took to execute if > 10 sec
+[cmd_duration]
+min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
+format = " took [$duration]($style)"
+
+# Prints the path to the working directory, truncating if > 3 directories deep
+[directory]
+truncation_length = 2
+format = "[$path]($style)[$lock_symbol]($lock_style) "
+
+# Print memory and swap usage if usage > 70%
+[memory_usage]
+format = "$symbol[${ram}( | ${swap})]($style) "
+threshold = 70
+style = "bold dimmed white"
+disabled = true
+
+# Prints username (turned off by default)
+[username]
+style_user = "bold dimmed blue"
+show_always = true
+
+# If python files exist, show the python symbol and the version number
+[python]
+format = "[$symbol$version]($style) "
+symbol = " "
+style = "bold green"
+
+# If rust files exist, show the rust symbol and the version number
+[rust]
+format = "[$symbol$version]($style) "
+style = "bold green"
+
+[lua]
+format = "[$symbol$version]($style) "
+symbol = " "
+style = "bold green"
