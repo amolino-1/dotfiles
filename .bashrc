@@ -13,7 +13,7 @@
 
 PS1='[\u@\h \W]\$ '
 ################################################################################
-#PF_INFO="ascii title os kernel wm uptime pkgs memory" pfetch
+PF_INFO="ascii title os kernel wm uptime pkgs memory" pfetch
 
 export EDITOR=nvim
 
