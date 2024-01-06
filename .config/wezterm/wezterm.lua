@@ -11,7 +11,7 @@ config.font = wezterm.font_with_fallback({
 	"Hack Nerd Font",
 }, { weight = "Bold", italic = false })
 
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.98
 config.hide_tab_bar_if_only_one_tab = true
 config.hide_mouse_cursor_when_typing = true
 config.default_cursor_style = "SteadyBar"

@@ -6,7 +6,7 @@ return {
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			"windwp/nvim-ts-autotag",
-			"luckasRanarison/tree-sitter-hypr", -- Hyprland syntax highlighting
+			"luckasRanarison/tree-sitter-hyprlang", -- Hyprland syntax highlighting
 		},
 		config = function()
 			-- import nvim-treesitter plugin
@@ -41,7 +41,7 @@ return {
 					"gitignore",
 					"go",
 					"html",
-					"hypr", -- Hyprland syntax highlighting
+					"hyprlang", -- Hyprland syntax highlighting
 					"java",
 					"javascript",
 					"json",
