@@ -41,7 +41,7 @@ export PATH="$PATH:/home/andrew/Scripts/Bash_Scripts/"
 alias gadi='ssh axm572@gadi.nci.org.au'
 alias mountgadi='sshfs axm572@gadi.nci.org.au:/scratch/k02/axm572 /home/andrew/Work/Gadi -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
 alias unmountgadi='cd && fusermount3 -u /home/andrew/Work/Gadi'
-alias pihole='ssh 192.168.86.37 -l andrew' # ssh <ip_address> -l <username>
+alias pihole='ssh 192.168.86.28 -l andrew' # ssh <ip_address> -l <username>
 
 ###---Pacman---###
 alias removeorph='sudo pacman -Qtdq | sudo pacman -Rns - '
