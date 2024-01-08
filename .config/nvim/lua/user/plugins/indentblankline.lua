@@ -1,5 +1,6 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
+	enabled = true,
 	event = "InsertEnter", -- Only load this plugin when you enter insert mode
 	config = function()
 		local highlight = {

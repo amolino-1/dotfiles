@@ -1,5 +1,6 @@
 return {
 	"github/copilot.vim",
+	enabled = true,
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		vim.g.copilot_filetypes = { -- Disable copilot for cetain filetypes

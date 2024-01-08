@@ -1,5 +1,6 @@
 return {
 	"hrsh7th/nvim-cmp",
+	enabled = true,
 	event = "InsertEnter", -- Only load this plugin when you enter insert mode
 	dependencies = {
 		"hrsh7th/cmp-buffer", -- source for text in buffer
