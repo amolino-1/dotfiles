@@ -34,6 +34,9 @@ local options = {
 	signcolumn = "yes", -- Always show the signcolumn
 }
 
+-- Set the Python3 host program
+vim.g.python3_host_prog = "/sbin/python3"
+
 -- Loop through each key-value pair in the 'options' table
 for optionName, value in pairs(options) do
 	-- Set each Neovim option using the 'vim.opt' interface
