@@ -31,12 +31,16 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+
 -- Keymaps for terminal mode navigation
+-- Open a vertical split terminal to the right and enter insert mode
+keymap("n", "<leader>tt", ":vsplit term://bash<CR>i", opts)
 keymap("t", "<Esc>", "<C-\\><C-n>", term_opts)
 keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-n><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-n><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-n><C-w>l", term_opts)
+
 -- Resize Splits with Alt + Arrow Key
 keymap("n", "<A-Up>", ":resize +2<CR>", opts)
 keymap("n", "<A-Down>", ":resize -2<CR>", opts)
@@ -53,6 +57,8 @@ keymap("n", "<leader>u", ":UndotreeToggle<CR>:UndotreeFocus<CR>", opts)
 -- Buffer Tabs
 keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 keymap("n", "<Tab>", ":bnext<CR>", opts)
+-- Create a vertical split and open a file
+keymap("n", "<leader>vs", ":vsplit<CR>:e ", opts)
 
 -- Visual Mode --
 -- Move Text Blocks Left/Right (Shift + </>)

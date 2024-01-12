@@ -48,6 +48,9 @@ alias removeorph='sudo pacman -Qtdq | sudo pacman -Rns - '
 
 ###---Git---###
 alias config='git --git-dir=$HOME/Scripts/dotfiles --work-tree=$HOME'
+alias ?='gh copilot explain'
+alias ??='gh copilot suggest'
+alias copilotupdate='gh extension upgrade gh-copilot'
 
 ###---Rust Packages---###
 alias ls='exa --color=always --group-directories-first -l --color-scale size -m --no-user'  # Default listing

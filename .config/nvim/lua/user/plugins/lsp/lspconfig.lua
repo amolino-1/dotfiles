@@ -123,16 +123,32 @@ return {
 			settings = {
 				python = {
 					analysis = {
-						extraPaths = {},
+						autoImportCompletions = true,
+						autoSearchPaths = true,
+						diagnosticMode = "workspace",
+						typeCheckingMode = "basic", -- off, basic, strict
+						useLibraryCodeForTypes = true,
+						diagnosticSeverityOverrides = {
+							strictListInference = true,
+							strictDictionaryInference = true,
+							strictSetInference = true,
+							reportUnusedImport = "warning",
+							reportUnusedClass = "warning",
+							reportUnusedFunction = "warning",
+							reportUnusedVariable = "warning",
+							reportUnusedCoroutine = "warning",
+							reportDuplicateImport = "warning",
+							reportPrivateUsage = "warning",
+							reportUnusedExpression = "warning",
+							reportConstantRedefinition = "error",
+							reportIncompatibleMethodOverride = "error",
+							reportMissingImports = "error",
+							reportUndefinedVariable = "error",
+							reportAssertAlwaysTrue = "error",
+						},
 					},
 				},
 			},
-		})
-
-		-- configure ruby language server
-		lspconfig["ruby_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
 		})
 
 		-- configure vim language server
