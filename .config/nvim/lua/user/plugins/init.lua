@@ -2,4 +2,5 @@
 
 return {
 	"mbbill/undotree", -- Undo Tree
+	"ThePrimeagen/vim-be-good", -- Vim Be Good
 }
