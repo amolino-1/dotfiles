@@ -2,8 +2,9 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
---config.color_scheme = "Dracula"
-config.color_scheme = "AuraDark-Custom"
+-- config.color_scheme = "Dracula"
+-- config.color_scheme = "AuraDark-Custom"
+config.color_scheme = "Rosé Pine (base16)"
 config.font_size = 12
 config.font = wezterm.font_with_fallback({
 	"JetBrainsMonoNL Nerd Font",
