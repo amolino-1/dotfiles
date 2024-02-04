@@ -52,6 +52,12 @@ keymap("n", "<leader>s", ":setlocal spell!<CR>", opts)
 keymap("n", "<S-s>", ":%s///g<Left><Left><Left>", opts)
 -- Remove highlighting
 keymap("n", "<leader>nh", ":nohl<CR>", opts)
+
+-- Add a new line above and exit insert mode
+keymap("n", "<leader>O", "O<Esc>j", opts)
+-- Add a new line below and exit insert mode
+keymap("n", "<leader>o", "o<Esc>k", opts)
+
 -- Undotree
 keymap("n", "<leader>u", ":UndotreeToggle<CR>:UndotreeFocus<CR>", opts)
 -- Buffer Tabs
@@ -64,13 +70,8 @@ keymap("n", "<leader>vs", ":vsplit<CR>:e ", opts)
 -- Move Text Blocks Left/Right (Shift + </>)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
--- Move text up and down
-keymap("v", "<A-Up>", ":m .+1<CR>==", opts)
-keymap("v", "<A-Down>", ":m .-2<CR>==", opts)
-keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
 
---- Disabe Arrow Keys ---
+-- Disable Arrow Keys in all Modes
 keymap("n", "<Up>", "<Nop>", opts)
 keymap("n", "<Down>", "<Nop>", opts)
 keymap("n", "<Left>", "<Nop>", opts)
@@ -83,3 +84,28 @@ keymap("v", "<Up>", "<Nop>", opts)
 keymap("v", "<Down>", "<Nop>", opts)
 keymap("v", "<Left>", "<Nop>", opts)
 keymap("v", "<Right>", "<Nop>", opts)
+keymap("n", "<C-Up>", "<Nop>", opts)
+keymap("n", "<C-Down>", "<Nop>", opts)
+keymap("n", "<C-Left>", "<Nop>", opts)
+keymap("n", "<C-Right>", "<Nop>", opts)
+keymap("i", "<C-Up>", "<Nop>", opts)
+keymap("i", "<C-Down>", "<Nop>", opts)
+keymap("i", "<C-Left>", "<Nop>", opts)
+keymap("i", "<C-Right>", "<Nop>", opts)
+keymap("n", "<S-Up>", "<Nop>", opts)
+keymap("n", "<S-Down>", "<Nop>", opts)
+keymap("n", "<S-Left>", "<Nop>", opts)
+keymap("n", "<S-Right>", "<Nop>", opts)
+keymap("i", "<S-Up>", "<Nop>", opts)
+keymap("i", "<S-Down>", "<Nop>", opts)
+keymap("i", "<S-Left>", "<Nop>", opts)
+keymap("i", "<S-Right>", "<Nop>", opts)
+
+-- Disable Arrow keys in dropdown menu
+keymap("c", "<Up>", "<Nop>", opts)
+keymap("c", "<Down>", "<Nop>", opts)
+keymap("c", "<C-Up>", "<Nop>", opts)
+keymap("c", "<C-Down>", "<Nop>", opts)
+
+-- Disable Control + Z in Normal Mode
+keymap("n", "<C-z>", "<Nop>", opts)
