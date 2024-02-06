@@ -50,18 +50,22 @@ disabled = true
 style_user = "bold dimmed blue"
 show_always = true
 
-# If python files exist, show the python symbol and the version number
 [python]
 format = "[$symbol$version]($style) "
 symbol = " "
-style = "bold green"
+style = "bold yellow"
 
-# If rust files exist, show the rust symbol and the version number
 [rust]
 format = "[$symbol$version]($style) "
-style = "bold green"
+symbol = " "
+style = "bold brown"
 
 [lua]
 format = "[$symbol$version]($style) "
 symbol = " "
-style = "bold green"
+style = "bold blue"
+
+[julia]
+format = "[$symbol$version]($style) "
+symbol = " "
+style = "bold purple"
