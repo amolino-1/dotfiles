@@ -153,7 +153,7 @@ return {
 							reportUnusedExpression = "warning",
 							reportConstantRedefinition = "error",
 							reportIncompatibleMethodOverride = "error",
-							reportMissingImports = "error",
+							reportMissingImports = "none",
 							reportUndefinedVariable = "error",
 							reportAssertAlwaysTrue = "error",
 						},

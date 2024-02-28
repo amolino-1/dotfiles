@@ -76,5 +76,24 @@ export GAUSS_SCRDIR=$g16root/scr
 alias g16='$GAUSS_EXEDIR/g16'
 alias gview="/home/andrew/Software/gview/gv/gv & disown"
 
+###---ACID---###
+export PATH=$PATH:/home/andrew/Software/povchem
+export PATH=$PATH:/home/andrew/Software/AICD-3.0.2
+
 ###---Starship Prompt---###
 eval "$(starship init bash)"
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/home/andrew/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/home/andrew/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<

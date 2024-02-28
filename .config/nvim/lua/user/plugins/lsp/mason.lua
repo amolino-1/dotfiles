@@ -33,7 +33,6 @@ return {
 				"jsonls",
 				"ltex",
 				"matlab_ls",
-				"ruby_ls",
 				"vimls",
 			},
 
