@@ -38,10 +38,23 @@ alias wifioff='nmcli radio wifi off'
 export PATH="$PATH:/home/andrew/Scripts/Bash_Scripts/"
 
 ###---SSH---###
+# Gadi
 alias gadi='ssh axm572@gadi.nci.org.au'
 alias mountgadi='sshfs axm572@gadi.nci.org.au:/scratch/k02/axm572 /home/andrew/Work/Gadi -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
 alias unmountgadi='cd && fusermount3 -u /home/andrew/Work/Gadi'
+# Engaging
+alias engaging='ssh amolino@eofe10.mit.edu'
+alias mountengaging='sshfs amolino@eofe10.mit.edu: /home/andrew/Work/Engaging/ -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
+alias unmountengaging='cd && fusermount3 -u /home/andrew/Work/Engaging'
+# Supercloud
+alias supercloud='ssh amolino@txe1-login.mit.edu'
+alias mountsupercloud='sshfs amolino@txe1-login.mit.edu: /home/andrew/Work/SuperCloud -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
+alias unmountsupercloud='cd && fusermount3 -u /home/andrew/Work/SuperCloud'
+# Pihole
 alias pihole='ssh 192.168.86.28 -l andrew' # ssh <ip_address> -l <username>
+
+###---VPN---###
+alias MITvpn='gpclient launch-gui & disown'
 
 ###---Pacman---###
 alias removeorph='sudo pacman -Qtdq | sudo pacman -Rns - '
