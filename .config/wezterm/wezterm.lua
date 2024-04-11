@@ -21,6 +21,6 @@ config.default_cursor_style = "SteadyBar"
 
 config.default_prog = { "/usr/bin/bash" } -- required for starship prompt
 
-config.enable_wayland = true
+config.enable_wayland = false
 
 return config
