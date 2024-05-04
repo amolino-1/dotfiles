@@ -51,7 +51,7 @@ alias supercloud='ssh amolino@txe1-login.mit.edu'
 alias mountsupercloud='sshfs amolino@txe1-login.mit.edu: /home/andrew/Work/SuperCloud -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
 alias unmountsupercloud='cd && fusermount3 -u /home/andrew/Work/SuperCloud'
 # Pihole
-alias pihole='ssh 192.168.86.28 -l andrew' # ssh <ip_address> -l <username>
+alias pihole='ssh 192.168.50.203 -l andrew' # ssh <ip_address> -l <username>
 
 ###---VPN---###
 alias MITvpn='gpclient launch-gui & disown'

@@ -52,7 +52,7 @@
     },
 
 "clock": {
-    "timezone": "Australia/Melbourne",
+    "timezone": "America/New_York",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%d/%m/%Y}",
 },
@@ -83,7 +83,8 @@
 "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "interval": 30,
-    "format-wifi": "{essid} ",
+    "format-wifi": "WiFi ",
+    // "format-wifi": "{essid} ",
     "format-ethernet": "<span size='x-large' rise='-1500' color='#fff'>⇣</span>{bandwidthDownBytes} <span size='x-large' rise='-1500' color='#fff'>⇡</span>{bandwidthUpBytes}  󰈀",
     // "format-ethernet": "{ipaddr}/{cidr} 󰈀",
     "tooltip-format": "{ifname} via {gwaddr} ",
