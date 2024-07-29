@@ -31,8 +31,8 @@ return {
 				"pyright",
 				"bashls",
 				"jsonls",
-				"ltex",
-				"matlab_ls",
+				-- "ltex",
+				-- "matlab_ls",
 				"vimls",
 			},
 
@@ -45,7 +45,7 @@ return {
 				"black", -- python formatter
 				"flake8", -- python linter
 				"isort", -- python formatter
-				"latexindent", -- latex formatter
+				-- "latexindent", -- latex formatter
 				"markdownlint", -- markdown linter
 				"prettier", -- prettier formatter
 				"pylint", -- python linter

@@ -83,22 +83,22 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- configure haTeX language server
-		lspconfig["ltex"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			autoStart = false,
-			settings = {
-				ltex = {
-					disabledRules = {
-						["en"] = { "MORFOLOGIK_RULE_EN", "SENTENCE_WHITESPACE" },
-						["en-AU"] = { "MORFOLOGIK_RULE_EN_AU", "SENTENCE_WHITESPACE" },
-						["en-GB"] = { "MORFOLOGIK_RULE_EN_GB", "SENTENCE_WHITESPACE" },
-						["en-US"] = { "MORFOLOGIK_RULE_EN_US", "SENTENCE_WHITESPACE" },
-					},
-				},
-			},
-		})
+		-- configure laTeX language server
+		-- lspconfig["ltex"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	autoStart = false,
+		-- 	settings = {
+		-- 		ltex = {
+		-- 			disabledRules = {
+		-- 				["en"] = { "MORFOLOGIK_RULE_EN", "SENTENCE_WHITESPACE" },
+		-- 				["en-AU"] = { "MORFOLOGIK_RULE_EN_AU", "SENTENCE_WHITESPACE" },
+		-- 				["en-GB"] = { "MORFOLOGIK_RULE_EN_GB", "SENTENCE_WHITESPACE" },
+		-- 				["en-US"] = { "MORFOLOGIK_RULE_EN_US", "SENTENCE_WHITESPACE" },
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
 
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
@@ -122,10 +122,10 @@ return {
 		})
 
 		-- configure matlab language server
-		lspconfig["matlab_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
+		-- lspconfig["matlab_ls"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
 
 		-- configure python server
 		lspconfig["pyright"].setup({

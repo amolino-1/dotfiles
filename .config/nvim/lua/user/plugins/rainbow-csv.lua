@@ -3,5 +3,7 @@ return {
 	enabled = true,
 	ft = { "csv" },
 	-- set the filetype using vim command
-	vim.cmd("autocmd BufNewFile,BufRead *.csv set filetype=rfc_csv"),
+	config = function()
+		vim.cmd("autocmd BufNewFile,BufRead *.csv set filetype=rfc_csv")
+	end,
 }
