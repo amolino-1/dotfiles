@@ -71,6 +71,6 @@ return {
 		vim.cmd([[highlight CursorLine ctermbg=Yellow cterm=bold guibg=#32394a]])
 		vim.cmd([[highlight CursorColumn ctermbg=Yellow cterm=bold guibg=#32394a]])
 		-- Set the colore scheme
-		vim.cmd("colorscheme rose-pine-moon")
+		vim.cmd("colorscheme rose-pine-main")
 	end,
 }

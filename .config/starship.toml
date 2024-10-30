@@ -1,5 +1,3 @@
-# ~/.config/starship.toml
-
 # Don't print a new line at the start of the prompt
 add_newline = false
 
@@ -7,65 +5,38 @@ add_newline = false
 [line_break]
 disabled = true
 
-# Replace the "❯" symbol in the prompt with "➜"
-# [character]                         # The name of the module we are configuring is "character"
-# success_symbol = "[➜](bold green)"  # The "success_symbol" is set to "➜" with color "bold green"
-
-# Use custom format
-# format = """
-# [┌───────────────────>](bold green)
-# [│](bold green)$directory$rust$package
-# [└─>](bold green) """
-
-# Timeout for command execution, in milliseconds
-command_timeout = 3600000
-
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
-
-# Prints a bold red arrow if a command you've entered failes
-[character]
-error_symbol = "[✖](bold red) "
-
-# Prints how long the command took to execute if > 10 sec
-[cmd_duration]
-min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
-format = " took [$duration]($style)"
-
-# Prints the path to the working directory, truncating if > 3 directories deep
+format = "$username $directory $git_branch$fill $time\n  [󱞪](fg:#c4a7e7) "
 [directory]
-truncation_length = 2
-format = "[$path]($style)[$lock_symbol]($lock_style) "
+format = "[](fg:#26233a)[ $path ]($style)[](fg:#26233a)"
+style = "bg:#26233a fg:#31748f"
+truncation_length = 3
+truncation_symbol = "…/"
 
-# Print memory and swap usage if usage > 70%
-[memory_usage]
-format = "$symbol[${ram}( | ${swap})]($style) "
-threshold = 70
-style = "bold dimmed white"
-disabled = true
+[directory.substitutions]
+Documents = "󰈙"
+Downloads = " "
+Music = " "
+Pictures = " "
 
-# Prints username (turned off by default)
+[fill]
+style = "fg:#26233a"
+symbol = " "
+
+[git_branch]
+format = "[](fg:#26233a)[ $symbol $branch ]($style)[](fg:#26233a)"
+style = "bg:#26233a fg:#9ccfd8"
+symbol = ""
+
+[time]
+disabled = false
+format = "[](fg:#26233a)[ $time  ]($style)[](fg:#26233a)"
+style = "bg:#26233a fg:#ebbcba"
+time_format = "%I:%M%P"
+use_12hr = true
+
 [username]
-style_user = "bold dimmed blue"
+disabled = false
+format = "[](fg:#26233a)[ $user ]($style)[](fg:#26233a)"
 show_always = true
-
-[python]
-format = "[$symbol$version]($style) "
-symbol = " "
-style = "bold yellow"
-
-[rust]
-format = "[$symbol$version]($style) "
-symbol = " "
-style = "bold brown"
-
-[lua]
-format = "[$symbol$version]($style) "
-symbol = " "
-style = "bold blue"
-
-[julia]
-format = "[$symbol$version]($style) "
-symbol = " "
-style = "bold purple"
+style_root = "bg:#26233a fg:#c4a7e7"
+style_user = "bg:#26233a fg:#c4a7e7"
