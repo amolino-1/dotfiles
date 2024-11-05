@@ -5,15 +5,12 @@
 #  |_.__/ \__,_|___/_| |_|_|  \___|
 #
 
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 PS1='[\u@\h \W]\$ '
 ################################################################################
-PF_INFO="ascii title os kernel wm uptime pkgs memory cpu" pfetch
+PF_INFO="ascii title os kernel wm uptime pkgs memory" pfetch
 
 export EDITOR=nvim
 
@@ -26,8 +23,6 @@ alias grep='grep --color=auto'
 alias yt-dlp='yt-dlp --merge-output-format mkv'
 alias sz='du -sch'
 alias mkdir='mkdir -p'
-alias glances='glances --disable-bg'
-alias stream='less -S +F'
 alias wifistatus='nmcli dev status'
 alias wifilist='nmcli d wifi list'
 alias wificonnect='sudo nmcli --ask dev wifi connect'
@@ -75,40 +70,9 @@ alias cat='bat'
 alias find='fd'
 alias du='dust'
 
-###---FZF---####
-alias fzf='fzf --preview="bat --color=always --style=numbers {}" --bind shift-up:preview-page-up,shift-down:preview-page-down'
-
-###---Chemcraft---###
-alias chemcraft='flatpak run --command=bottles-cli com.usebottles.bottles run -b Chemcraft -e ~/.var/app/com.usebottles.bottles/data/bottles/bottles/Chemcraft/drive_c/Chemcraft/Chemcraft.exe'
-
-###---IboView---###
-alias iboview='flatpak run --command=bottles-cli com.usebottles.bottles run -b Chemcraft -e /home/andrew/Software/iboView_Version20211019RevA/bin/IboView.exe'
-
-###---Gaussian---###
-export g16root="$HOME/Software/Gaussian"
-export GAUSS_EXEDIR=$g16root/g16
-export GAUSS_SCRDIR=$g16root/scr
-alias g16='$GAUSS_EXEDIR/g16'
-alias gview="/home/andrew/Software/gview/gv/gv & disown"
-
-###---ACID---###
-export PATH=$PATH:/home/andrew/Software/povchem
-export PATH=$PATH:/home/andrew/Software/AICD-3.0.2
+###---AICD 3.0.2---###
+export PATH=$PATH:$HOME/Software/povchem/
+export PATH=$PATH:$HOME/Software/AICD-3.0.4/AICD-3.0.4
 
 ###---Starship Prompt---###
 eval "$(starship init bash)"
-
-# >>> juliaup initialize >>>
-
-# !! Contents within this block are managed by juliaup !!
-
-case ":$PATH:" in
-    *:/home/andrew/.juliaup/bin:*)
-        ;;
-
-    *)
-        export PATH=/home/andrew/.juliaup/bin${PATH:+:${PATH}}
-        ;;
-esac
-
-# <<< juliaup initialize <<<
