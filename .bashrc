@@ -39,12 +39,12 @@ alias mountgadi='sshfs axm572@gadi.nci.org.au:/scratch/k02/axm572 /home/andrew/W
 alias unmountgadi='cd && fusermount3 -u /home/andrew/Work/Gadi'
 # Engaging
 alias engaging='ssh amolino@eofe10.mit.edu'
-alias mountengaging='sshfs amolino@eofe10.mit.edu: /home/andrew/Work/Engaging/ -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
-alias unmountengaging='cd && fusermount3 -u /home/andrew/Work/Engaging'
+alias mountengaging='sshfs amolino@eofe10.mit.edu: $HOME/Work/Engaging/ -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
+alias unmountengaging='cd && fusermount3 -u $HOME/Work/Engaging'
 # Supercloud
 alias supercloud='ssh amolino@txe1-login.mit.edu'
-alias mountsupercloud='sshfs amolino@txe1-login.mit.edu: /home/andrew/Work/SuperCloud -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
-alias unmountsupercloud='cd && fusermount3 -u /home/andrew/Work/SuperCloud'
+alias mountsupercloud='sshfs amolino@txe1-login.mit.edu: $HOME/Work/SuperCloud -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
+alias unmountsupercloud='cd && fusermount3 -u $HOME/Work/SuperCloud'
 # Athena
 alias athena='ssh -X -Y athena.dialup.mit.edu -l amolino'
 # Pihole
