@@ -48,7 +48,7 @@ alias unmountsupercloud='cd && fusermount3 -u $HOME/Work/SuperCloud'
 # Athena
 alias athena='ssh -X -Y athena.dialup.mit.edu -l amolino'
 # Pihole
-alias pihole='ssh 192.168.50.203 -l andrew' # ssh <ip_address> -l <username>
+alias pihole='ssh 192.168.86.76 -l andrew' # ssh <ip_address> -l <username>
 
 ###---VPN---###
 alias MITvpn='gpclient launch-gui & disown'
@@ -67,7 +67,7 @@ alias ls='exa --color=always --group-directories-first -l --color-scale size -m 
 alias la='exa -al --color=always --group-directories-first'  # All files and dirs
 alias lt='exa -aT --color=always --group-directories-first'  # Tree listing
 alias cat='bat'
-alias find='fd'
+# alias find='fd'
 alias du='dust'
 
 ###---AICD 3.0.2---###
@@ -76,3 +76,6 @@ export PATH=$PATH:$HOME/Software/AICD-3.0.4/AICD-3.0.4
 
 ###---Starship Prompt---###
 eval "$(starship init bash)"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

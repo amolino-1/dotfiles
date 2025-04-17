@@ -15,8 +15,9 @@
     "format": "{icon}",
     "on-click": "activate",
     "persistent-workspaces": {
-       "DP-3": [ 1 ],
-       "DP-1": [ 2, 3, 4, 5, 6, 7 ],
+       "DP-3": [ 1, 2, 3, 4, 5, 6, 7 ],
+       // "DP-3": [ 1 ],
+       // "DP-1": [ 2, 3, 4, 5, 6, 7 ],
        // "1": ["DP-1"],
        // "2": ["HDMI-A-2"],
        // "3": ["HDMI-A-2"],
@@ -53,7 +54,7 @@
     },
 
 "clock": {
-    "timezone": "America/New_York",
+    "timezone": "Australia/Victoria",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%d/%m/%Y}",
 },
@@ -67,7 +68,7 @@
 "disk#2": {
     "interval": 30,
 	"format": "{percentage_used}% ",
-    "path": "/mnt/Crucial2TB/",
+    "path": "/run/media/andrew/WD_Blue/",
     },
 
 "cpu": {

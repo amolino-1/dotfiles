@@ -11,6 +11,7 @@ return {
 			out = false,
 			xyz = false,
 			tex = false,
+			py = false,
 		}
 		vim.cmd([[highlight CopilotSuggestion guifg=#06D6A0 ctermfg=8]]) -- Change the color of the copilot suggestion
 	end,
