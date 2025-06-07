@@ -33,25 +33,8 @@ alias wifioff='nmcli radio wifi off'
 export PATH="$PATH:/home/andrew/Scripts/Bash_Scripts/"
 
 ###---SSH---###
-# Gadi
-alias gadi='ssh axm572@gadi.nci.org.au'
-alias mountgadi='sshfs axm572@gadi.nci.org.au:/scratch/k02/axm572 /home/andrew/Work/Gadi -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
-alias unmountgadi='cd && fusermount3 -u /home/andrew/Work/Gadi'
-# Engaging
-alias engaging='ssh amolino@eofe10.mit.edu'
-alias mountengaging='sshfs amolino@eofe10.mit.edu: $HOME/Work/Engaging/ -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
-alias unmountengaging='cd && fusermount3 -u $HOME/Work/Engaging'
-# Supercloud
-alias supercloud='ssh amolino@txe1-login.mit.edu'
-alias mountsupercloud='sshfs amolino@txe1-login.mit.edu: $HOME/Work/SuperCloud -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
-alias unmountsupercloud='cd && fusermount3 -u $HOME/Work/SuperCloud'
-# Athena
-alias athena='ssh -X -Y athena.dialup.mit.edu -l amolino'
 # Pihole
 alias pihole='ssh 192.168.86.76 -l andrew' # ssh <ip_address> -l <username>
-
-###---VPN---###
-alias MITvpn='gpclient launch-gui & disown'
 
 ###---Pacman---###
 alias removeorph='sudo pacman -Qtdq | sudo pacman -Rns - '
@@ -69,10 +52,6 @@ alias lt='exa -aT --color=always --group-directories-first'  # Tree listing
 alias cat='bat'
 # alias find='fd'
 alias du='dust'
-
-###---AICD 3.0.2---###
-export PATH=$PATH:$HOME/Software/povchem/
-export PATH=$PATH:$HOME/Software/AICD-3.0.4/AICD-3.0.4
 
 ###---Starship Prompt---###
 eval "$(starship init bash)"
