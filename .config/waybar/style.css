@@ -7,6 +7,13 @@
 window#waybar {
   background-color: rgba(43, 48, 59, 0.5);
   border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+
+  /* ROUND ALL FOUR CORNERS: half the bar’s height for a “pill” shape */
+  border-radius: 14px; /* if your height is 27px, 14px ≃ 27/2 */
+
+  /* OPTIONAL: inset from the screen edges so you actually see the curves */
+  margin: 6px 6px; /* 6px top/bottom, 12px left/right */
+
   color: #ffffff;
   transition-property: background-color;
   transition-duration: 0.5s;
