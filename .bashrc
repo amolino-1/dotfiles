@@ -8,53 +8,26 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# ── Prompt ────────────────────────────────────────────────────────────────────
 PS1='[\u@\h \W]\$ '
-################################################################################
+
+# ── pfetch system summary ─────────────────────────────────────────────────────
 PF_INFO="ascii title os kernel wm uptime pkgs memory" pfetch
 
+# ── Editor ────────────────────────────────────────────────────────────────────
 export EDITOR=nvim
 
-# Ignore duplicate commands when scrolling through history
+# ── History ───────────────────────────────────────────────────────────────────
 export HISTCONTROL=ignoreboth:erasedups
 
-###---Aliases---###
-alias vi='nvim'
-alias grep='grep --color=auto'
-alias yt-dlp='yt-dlp --merge-output-format mkv'
-alias sz='du -sch'
-alias mkdir='mkdir -p'
-alias wifistatus='nmcli dev status'
-alias wifilist='nmcli d wifi list'
-alias wificonnect='sudo nmcli --ask dev wifi connect'
-alias wifion='nmcli radio wifi on'
-alias wifioff='nmcli radio wifi off'
-
-###---MyScripts---###
+# ── Scripts ───────────────────────────────────────────────────────────────────
 export PATH="$PATH:/home/andrew/Scripts/Bash_Scripts/"
 
-###---SSH---###
-# Pihole
-alias pihole='ssh 192.168.86.76 -l andrew' # ssh <ip_address> -l <username>
+# ── Load user aliases (kept in ~/.bash_aliases) ───────────────────────────
+if [[ -f ~/.bash_aliases ]]; then
+    source ~/.bash_aliases
+fi
 
-###---Pacman---###
-alias removeorph='sudo pacman -Qtdq | sudo pacman -Rns - '
-
-###---Git---###
-alias config='git --git-dir=$HOME/Scripts/dotfiles --work-tree=$HOME'
-alias ?='gh copilot explain'
-alias ??='gh copilot suggest'
-alias copilotupdate='gh extension upgrade gh-copilot'
-
-###---Rust Packages---###
-alias ls='exa --color=always --group-directories-first -l --color-scale size -m --no-user'  # Default listing
-alias la='exa -al --color=always --group-directories-first'  # All files and dirs
-alias lt='exa -aT --color=always --group-directories-first'  # Tree listing
-alias cat='bat'
-# alias find='fd'
-alias du='dust'
-
-###---Starship Prompt---###
+# ── Starship prompt initialisation ───────────────────────────────────────────
 eval "$(starship init bash)"
 
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
