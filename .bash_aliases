@@ -30,3 +30,24 @@ alias lt='exa -aT --color=always --group-directories-first'  # Tree listing
 alias cat='bat'
 # alias find='fd'
 alias du='dust'
+
+###---Fastfetch Wrapper---###
+alias ffetch="$HOME/.config/fastfetch/ffetch.py"
+
+###---Grep (ripgrep fallback)---###
+if command -v rg &> /dev/null; then
+    alias grep='rg'
+else
+    alias grep="/usr/bin/grep \$GREP_OPTIONS"
+fi
+unset GREP_OPTIONS
+
+###---History Search---###
+alias h="history | grep "
+
+###---File Count---###
+alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
+
+###---IP Lookup---###
+alias whatismyip="whatsmyip"
+
