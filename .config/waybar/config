@@ -82,26 +82,35 @@
     },
 
 "temperature": {
-    // "thermal-zone": 4,
-    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-    "critical-threshold": 80,
-    // "format-critical": "{temperatureC}°C {icon}",
+    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
     "format": "{temperatureC}°C ",
+    "critical-threshold": 80,
+    "format-critical": "{temperatureC}°C {icon}",
     "interval": 5,
+    "on-click": "notify-send 'CPU Temp' \"$(awk '{printf(\"%.1f°C\", $1/1000)}' /sys/class/hwmon/hwmon4/temp1_input)\""
     },
 
 "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "interval": 30,
-    "format-wifi": "WiFi ",
-    // "format-wifi": "{essid} ",
-    "format-ethernet": "<span size='x-large' rise='-1500' color='#fff'>⇣</span>{bandwidthDownBytes} <span size='x-large' rise='-1500' color='#fff'>⇡</span>{bandwidthUpBytes}  󰈀",
-    // "format-ethernet": "{ipaddr}/{cidr} 󰈀",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    },
+  // 1) Pin to your ethernet device so Waybar knows which link to watch
+  "interval": 30,
+
+  // 2) Give it a real base format — here we’ll use {icon} so it shows only the icon
+  "format": "{icon}",
+
+  // 3) Map each state to your chosen glyph
+  "format-icons": {
+    "ethernet":     "󰌘",
+    "wifi":         "",
+    "linked":       "",
+    "disconnected": ""
+  },
+
+  // 4) On click, toggle to show IP/CIDR
+  "format-alt": "{ifname}: {ipaddr}/{cidr}",
+
+  // 5) (Optional) Hover tooltip
+  "tooltip-format": "{ifname} via {gwaddr}"
+},
 
 "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
