@@ -90,5 +90,3 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 if [[ -f ~/.bash_functions ]]; then
     source ~/.bash_functions
 fi
-
-#THIS IS A TEST
