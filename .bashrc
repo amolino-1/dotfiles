@@ -62,9 +62,9 @@ if [[ -f ~/.bash_aliases ]]; then
 fi
 
 # ── Fastfetch System Summary ──────────────────────────────────────────────────
-if command -v fastfetch &>/dev/null; then
-    ffetch
-fi
+# if command -v fastfetch &>/dev/null; then
+#     ffetch
+# fi
 
 # ── Bell & Readline Tweaks ─────────────────────────────────────────────────────
 if [[ $- == *i* ]]; then
