@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=YouTube Music
+Exec=flatpak 'run' '--command=vivaldi' 'com.vivaldi.Vivaldi' '--profile-directory=Default' '--app-id=cinhimbnkkaeohfgghhklpknlkffjgod'
+Icon=vivaldi-cinhimbnkkaeohfgghhklpknlkffjgod-Default
+StartupWMClass=crx_cinhimbnkkaeohfgghhklpknlkffjgod
+X-Flatpak-Part-Of=com.vivaldi.Vivaldi
+TryExec=/var/lib/flatpak/exports/bin/com.vivaldi.Vivaldi
