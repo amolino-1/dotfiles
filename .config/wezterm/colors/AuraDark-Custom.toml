@@ -1,0 +1,37 @@
+[colors]
+ansi = [
+    "#15141b",
+    "#ff6767",
+    '#61ffca',
+    '#ffca85',
+    '#a277ff',
+    '#a277ff',
+    '#61ffca',
+    '#edecee',
+]
+
+background = "#15141b"
+brights = [
+    '#6d6d6d',
+    '#ff6767',
+    '#61ffca',
+    '#ffca85',
+    '#a277ff',
+    '#a277ff',
+    '#61ffca',
+    '#edecee',
+]
+
+cursor_bg = "#f8f8f2"
+cursor_border = "#f8f8f2"
+cursor_fg = "#282a36"
+foreground = "#edecee"
+selection_bg = "#29263c"
+selection_fg = "#edecee"
+scrollbar_thumb = '#6d6d6d'
+
+[colors.indexed]
+
+[metadata]
+aliases = []
+name = "AuraDark-Custom"

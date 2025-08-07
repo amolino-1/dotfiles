@@ -1,0 +1,135 @@
+{
+"layer": "top", // Waybar at top layer
+"position": "top", // Waybar position (top|bottom|left|right)
+"height": 27, // Waybar height (to be removed for auto height)
+"margin-top": 2,
+"width": 1906, // Waybar width
+"spacing": 4, // Gaps between modules (4px)
+// Choose the order of the modules
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "network", "pulseaudio", "disk", "disk#2", "memory", "cpu", "temperature", "clock"],
+
+// Modules configuration
+
+"hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "persistent-workspaces": {
+       "DP-3": [ 1 ],
+       "DP-1": [ 2, 3, 4, 5, 6 ],
+       // "1": ["DP-1"],
+       // "2": ["HDMI-A-2"],
+       // "3": ["HDMI-A-2"],
+       // "4": ["HDMI-A-2"],
+       // "5": ["HDMI-A-2"],
+       // "6": ["HDMI-A-2"],
+        },
+    "format-icons": {
+        "1": "祿",
+        "2": "祿",
+        "3": "祿",
+        "4": "祿",
+        "5": "祿",
+        "6": "祿",
+        // "7": " ",
+        "urgent": "",
+        "active": "綠",
+        "default": "祿",
+        },
+    "sort-by-number": true,
+    },
+
+"idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": "",
+        "deactivated": "",
+        }
+    },
+
+"tray": {
+    // "icon-size": 21,
+    "spacing": 10,
+    },
+
+"clock": {
+    "timezone": "Australia/Victoria",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%d/%m/%Y}",
+},
+
+"disk": {
+    "interval": 30,
+	"format": "{percentage_used}% ",
+    "path": "/",
+    },
+
+"disk#2": {
+    "interval": 30,
+	"format": "{percentage_used}% ",
+    "path": "/run/media/andrew/WD_Blue/",
+    },
+
+"cpu": {
+    "format": "{usage}% ",
+    "tooltip": false,
+    },
+
+"memory": {
+    "format": "{}% ",
+    },
+
+"temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+    "format": "{temperatureC}°C ",
+    "critical-threshold": 80,
+    "format-critical": "{temperatureC}°C {icon}",
+    "interval": 5,
+    "on-click": "notify-send 'CPU Temp' \"$(awk '{printf(\"%.1f°C\", $1/1000)}' /sys/class/hwmon/hwmon4/temp1_input)\""
+    },
+
+"network": {
+  // 1) Pin to your ethernet device so Waybar knows which link to watch
+  "interval": 30,
+
+  // 2) Give it a real base format — here we’ll use {icon} so it shows only the icon
+  "format": "{icon}",
+
+  // 3) Map each state to your chosen glyph
+  "format-icons": {
+    "ethernet":     "󰌘",
+    "wifi":         "",
+    "linked":       "",
+    "disconnected": ""
+  },
+
+  // 4) On click, toggle to show IP/CIDR
+  "format-alt": "{ifname}: {ipaddr}/{cidr}",
+
+  // 5) (Optional) Hover tooltip
+  "tooltip-format": "{ifname} via {gwaddr}"
+},
+
+"pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    // "format": "{volume}% {icon} {format_source}",
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""],
+        },
+    "on-click": "pavucontrol",
+    },
+
+}
