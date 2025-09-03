@@ -32,7 +32,7 @@ fi
 
 shift $((OPTIND-1))
 
-OUTPUTDIR="/mnt/Crucial2TB/.Videos"
+OUTPUTDIR="$HOME/Videos/.Videos/"
 
 [ -d "$OUTPUTDIR" ] && mkdir -p "$OUTPUTDIR"
 
