@@ -9,6 +9,7 @@ alias wifilist='nmcli d wifi list'
 alias wificonnect='sudo nmcli --ask dev wifi connect'
 alias wifion='nmcli radio wifi on'
 alias wifioff='nmcli radio wifi off'
+alias starthyprland='exec start-hyprland -- --config ~/.config/hypr/hyprland.conf'
 
 ###---SSH---###
 # Pihole
