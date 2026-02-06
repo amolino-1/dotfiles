@@ -7,9 +7,6 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
-		-- import lspconfig plugin
-		local lspconfig = require("lspconfig")
-
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -42,7 +39,7 @@ return {
 			keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
 			opts.desc = "Show buffer diagnostics"
-			keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+			keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show diagnostics for file
 
 			opts.desc = "Show line diagnostics"
 			keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
@@ -64,7 +61,6 @@ return {
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
-		-- (not in youtube nvim video)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
@@ -72,36 +68,19 @@ return {
 		end
 
 		-- configure bash language server
-		lspconfig["bashls"].setup({
+		vim.lsp.config("bashls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
 		-- configure json language server
-		lspconfig["jsonls"].setup({
+		vim.lsp.config("jsonls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
-		-- configure laTeX language server
-		-- lspconfig["ltex"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- 	autoStart = false,
-		-- 	settings = {
-		-- 		ltex = {
-		-- 			disabledRules = {
-		-- 				["en"] = { "MORFOLOGIK_RULE_EN", "SENTENCE_WHITESPACE" },
-		-- 				["en-AU"] = { "MORFOLOGIK_RULE_EN_AU", "SENTENCE_WHITESPACE" },
-		-- 				["en-GB"] = { "MORFOLOGIK_RULE_EN_GB", "SENTENCE_WHITESPACE" },
-		-- 				["en-US"] = { "MORFOLOGIK_RULE_EN_US", "SENTENCE_WHITESPACE" },
-		-- 			},
-		-- 		},
-		-- 	},
-		-- })
-
 		-- configure lua server (with special settings)
-		lspconfig["lua_ls"].setup({
+		vim.lsp.config("lua_ls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			settings = { -- custom settings for lua
@@ -121,14 +100,8 @@ return {
 			},
 		})
 
-		-- configure matlab language server
-		-- lspconfig["matlab_ls"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
-
 		-- configure python server
-		lspconfig["pyright"].setup({
+		vim.lsp.config("pyright", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			settings = {
@@ -163,9 +136,12 @@ return {
 		})
 
 		-- configure vim language server
-		lspconfig["vimls"].setup({
+		vim.lsp.config("vimls", {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+
+		-- enable the servers
+		vim.lsp.enable({ "bashls", "jsonls", "lua_ls", "pyright", "vimls" })
 	end,
 }

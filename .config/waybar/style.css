@@ -1,7 +1,8 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: otf-font-awesome;
-  font-size: 13px;
+  font-size: 15px;
+  min-height: 0;
 }
 
 window#waybar {
@@ -9,7 +10,7 @@ window#waybar {
   border-bottom: 3px solid rgba(100, 114, 125, 0.5);
 
   /* ROUND ALL FOUR CORNERS: half the bar’s height for a “pill” shape */
-  border-radius: 14px; /* if your height is 27px, 14px ≃ 27/2 */
+  border-radius: 17px; /* if your height is 27px, 14px ≃ 27/2 */
 
   /* OPTIONAL: inset from the screen edges so you actually see the curves */
   margin: 6px 6px; /* 6px top/bottom, 12px left/right */

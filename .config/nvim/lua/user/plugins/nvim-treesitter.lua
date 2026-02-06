@@ -17,6 +17,7 @@ return {
 			treesitter.setup({ -- enable syntax highlighting
 				highlight = {
 					enable = true,
+					disable = { "hyprlang" },
 				},
 				-- enable indentation
 				indent = { enable = true },
@@ -42,7 +43,7 @@ return {
 					"gitignore",
 					"go",
 					"html",
-					"hyprlang", -- Hyprland syntax highlighting
+					-- "hyprlang", -- Hyprland syntax highlighting
 					"java",
 					"javascript",
 					"json",

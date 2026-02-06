@@ -1,14 +1,16 @@
 {
-"layer": "top", // Waybar at top layer
-"position": "top", // Waybar position (top|bottom|left|right)
-"height": 27, // Waybar height (to be removed for auto height)
-"margin-top": 2,
-"width": 1906, // Waybar width
-"spacing": 4, // Gaps between modules (4px)
-// Choose the order of the modules
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["tray", "network", "pulseaudio", "disk", "disk#2", "memory", "cpu", "temperature", "clock"],
+  "layer": "top",
+  "position": "top",
+  "height": 27,
+  "margin-top": 2,
+  "width": 2545,
+  "spacing": 4,
+
+  "reload_style_on_change": true,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["tray", "network", "pulseaudio", "disk", "disk#2", "memory", "cpu", "temperature#cpu", "temperature#gpu", "clock"],
 
 // Modules configuration
 
@@ -16,8 +18,7 @@
     "format": "{icon}",
     "on-click": "activate",
     "persistent-workspaces": {
-       "DP-3": [ 1 ],
-       "DP-1": [ 2, 3, 4, 5, 6 ],
+       "DP-2": [ 1, 2, 3, 4, 5, 6 ],
        // "1": ["DP-1"],
        // "2": ["HDMI-A-2"],
        // "3": ["HDMI-A-2"],
@@ -80,7 +81,7 @@
     "format": "{}% ",
     },
 
-"temperature": {
+"temperature#cpu": {
     "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
     "format": "{temperatureC}°C ",
     "critical-threshold": 80,
@@ -88,6 +89,15 @@
     "interval": 5,
     "on-click": "notify-send 'CPU Temp' \"$(awk '{printf(\"%.1f°C\", $1/1000)}' /sys/class/hwmon/hwmon4/temp1_input)\""
     },
+
+"temperature#gpu": {
+  "hwmon-path": "/sys/class/drm/card1/device/hwmon/hwmon2/temp1_input",
+  "format": "{temperatureC}°C 󰢮",
+  "critical-threshold": 90,
+  "format-critical": "{temperatureC}°C {icon}",
+  "interval": 5,
+  "on-click": "notify-send 'GPU Temp' \"$(awk '{printf(\"%.1f°C\", $1/1000)}' /sys/class/drm/card1/device/hwmon/hwmon2/temp1_input)\""
+},
 
 "network": {
   // 1) Pin to your ethernet device so Waybar knows which link to watch
@@ -99,7 +109,7 @@
   // 3) Map each state to your chosen glyph
   "format-icons": {
     "ethernet":     "󰌘",
-    "wifi":         "",
+    "wifi":         " ",
     "linked":       "",
     "disconnected": ""
   },
